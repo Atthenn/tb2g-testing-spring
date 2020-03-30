@@ -1,12 +1,12 @@
-package sfg.Junit5;
+package org.springframework.samples.petclinic.sfg.Junit5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import sfg.HearingInterpreter;
-import sfg.LaurelWordProducer;
+import org.springframework.samples.petclinic.sfg.HearingInterpreter;
+import org.springframework.samples.petclinic.sfg.LaurelWordProducer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
