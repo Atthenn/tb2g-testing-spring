@@ -4,28 +4,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ActiveProfiles("component-scan")
-@SpringJUnitConfig(classes = {HearingInterpreterComponentScanTest.TestConfig.class})
-class HearingInterpreterComponentScanTest {
+@ActiveProfiles("yanny")
+@SpringJUnitConfig(classes = {HearingInterpreterActiveProfileTest.TestConfig.class})
+class HearingInterpreterActiveProfileTest {
+    @Autowired
+    HearingInterpreter hearingInterpreter;
 
-    @Profile("component-scan")
     @Configuration
     @ComponentScan("org.springframework.samples.petclinic.sfg")
-    static class TestConfig {
+    static class TestConfig{
 
     }
 
-    @Autowired
-    HearingInterpreter hearingInterpreter;
+
     @Test
     void whatIheard() {
         String word = hearingInterpreter.whatIheard();
-        assertEquals("Laurel", word);
+        assertEquals("Yanny", word);
     }
 }
